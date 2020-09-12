@@ -1,4 +1,4 @@
-replica: 1
+replica: 3
 image:
   repo: ajaypspk/microservice
   tag: latest
