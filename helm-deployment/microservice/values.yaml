@@ -1,0 +1,11 @@
+replica: 1
+image:
+  repo: ajaypspk/microservice
+  tag: latest
+name: microservice
+containerPort: 8080
+service:
+  name: microservice
+  type: LoadBalancer
+  port: 8080
+  targetPort: 8080
