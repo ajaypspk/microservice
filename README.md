@@ -56,11 +56,19 @@ NAMESPACE: hello
 STATUS: deployed
 REVISION: 1
 
-$ kubectl get po
-NAME                            READY     STATUS    RESTARTS   AGE
-microservice-7bf776f9dc-xwp49   1/1       Running   0          1m
+$ kubectl get deploy -n microservice
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+microservice   3/3     3            3           102m
 
-$ kubectl get svc
-NAME           TYPE           CLUSTER-IP      EXTERNAL-IP                   PORT(S)          AGE
-microservice   LoadBalancer   172.30.189.61   172.29.68.108,172.29.68.108   8080:31207/TCP   5m
+$ kubectl get po -n microservice
+NAME                            READY   STATUS    RESTARTS   AGE
+microservice-74c89f78d8-phdsg   1/1     Running   0          63s
+microservice-74c89f78d8-q489g   1/1     Running   0          63s
+microservice-74c89f78d8-zdf6d   1/1     Running   0          103m
+
+$ kubectl get svc -n microservice
+NAME           TYPE           CLUSTER-IP       EXTERNAL-IP                                                                 PORT(S)      
+    AGE
+microservice   LoadBalancer   172.20.218.217   a621ac164c5a24b7fbae5ac0fc48a24c-881786206.ca-central-1.elb.amazonaws.com   8080:32620/TC
+P   103m
 ```
